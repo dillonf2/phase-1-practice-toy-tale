@@ -13,3 +13,17 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 });
+
+document.addEventListener(`DOMContentLoaded`, ()=>{
+  fetch(`http://localhost:3000/toys`)
+  .then((res)=>{return res.json()})
+  .then((data)=>{
+    setTimeout(()=>{
+      document.createElement(`div`).classList.add("card")
+      d=document.querySelector(`.card`)
+      d.append(`#toy-collection`)
+      d.innerText=data
+      console.log(data)}, 2000)
+  })
+  
+})
